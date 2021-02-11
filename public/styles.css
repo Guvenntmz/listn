@@ -61,3 +61,7 @@ div.card-bg:nth-child(4) {
     border-top:none !important;
 }
 
+.swiper-container {
+    height: 300px;
+  }
+  

@@ -1,7 +1,11 @@
 <script>
     import { adminPlaylists } from '../scripts/stores';
-    import Card from './Card.svelte'
 
+
+    export let playlistName = '';
+    export let mood = '';
+    export let songs = [];
+    
     let playlists = [];
     
     adminPlaylists.subscribe(value => {
@@ -11,22 +15,21 @@
 
 </script>
 
-
-<ul class='row flex-nowrap pl-0'>
-    <!-- looping through adminPlaylists array to render individual card -->
-    {#each playlists as playlist}
-        <li class='col-12'>
-            <Card id={playlist.id} mood={playlist.mood} playlistName={playlist.playlistName} songs={playlist.songs} />
-        </li>
-    {/each}
-    
-</ul>
+<!-- Slider main container -->
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+    </div>
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+</div>
+  
 
 
 <style>
-    ul {
-        list-style-type: none;
-    }
-    
-    
+
 </style>

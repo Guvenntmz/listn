@@ -20,8 +20,10 @@
     "axios": "^0.21.1",
     "cuid": "^2.1.8",
     "rollup": "^2.33.3",
+    "rollup-plugin-css-only": "^3.1.0",
     "sirv-cli": "^0.4.6",
     "smoothscroll-polyfill": "^0.4.4",
-    "svelte-routing": "^1.4.2"
+    "svelte-routing": "^1.4.2",
+    "swiper": "^6.4.11"
   }
 }
