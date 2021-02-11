@@ -8,7 +8,7 @@
 
 </script>
 
-<div class="">
+<div class="buddies-cont">
     <div >
         <h1>Explore your buddies' playlists.</h1>
     </div>
@@ -16,5 +16,4 @@
 
 <style>
 
-    
 </style>

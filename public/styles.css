@@ -1,6 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200&display=swap');
 
-html {
-    overflow: hidden;
+
+html, body, main {
+    min-height: 100%;
+    
+}
+
+
+main {
+    font-family: 'IBM Plex Sans';
+    background: url('/img/volume.png') no-repeat center/50% #6699CC;
+    color: #f2f1ef;
+}
+
+.explore-cont, .library-cont, .buddies-cont, .profile-cont {
+    min-height: 80vh;
+}
+
+
+a:hover {
+    text-decoration: none
+    
+}
+
+a {
+    text-decoration: none;
+}
+
+.spinner {
+    width: 80px;
+    height: 80px;
+    border: 5px solid transparent;
+    border-radius: 50% 50%;
+    border-top-color: red;
+    border-bottom-color: red;
+    animation: spin 0.5s ease infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+    color: rgb(31, 68, 168);
+}
+
+
+.navbar-brand {
+    font-family: 'IBM Plex Sans';
+    font-size: 2rem;
+}
+
+div.card-bg:nth-child(4) {
+    padding-top: 3rem !important;
+    border-top:none !important;
 }
 

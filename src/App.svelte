@@ -1,7 +1,8 @@
 <script>
 	import { Router, Route } from "svelte-routing";
 	import Login from "./Login.svelte";
-	import Navbar from "./Navbar.svelte";
+	import Navbar from "./shared/Navbar.svelte";
+	import Footer from "./shared/Footer.svelte";
 	import Explore from "./Explore.svelte";
 	import Library from "./Library.svelte";
 	import Profile from "./Profile.svelte";
@@ -11,11 +12,11 @@
 
 	const asyncCalls = () => {
 		//getting user's details and setting it to an object in storoes.js
-		getUserDetails();
+		//getUserDetails();
 		//getting admin playlists and setting it to the array in stores.js
 		getAdminPlaylists();
 		//getting buddies from database and setting it to buddiesArr in stores.js
-		getBuddiesFromDb();
+		//getBuddiesFromDb();
 		return '';
 	}
 
@@ -31,7 +32,7 @@
 
 </script>
 
-<main class="min-h-screen">
+<main>
 	{#if window.location.pathname === '/'}
 		{redirect()}
 	{:else if window.location.pathname === '/auth'}
@@ -45,6 +46,7 @@
 			<Route path='/buddies'><Buddies /></Route>
 			<Route path='/profile'><Profile /></Route>
 			<Route path='/spotify'><Spotify /></Route>
+			<Footer />
 		</Router>
 	{/if}	
 </main>

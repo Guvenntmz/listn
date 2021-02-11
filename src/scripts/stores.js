@@ -2,19 +2,23 @@ import { writable } from "svelte/store";
 import cuid from 'cuid';
 
 
-export const adminPlaylists = writable();
+export const adminPlaylists = writable([]);
 export const userDetails = writable();
-export const buddiesArr = writable();
+export const buddiesArr = writable([]);
 
 
 export const getAdminPlaylists = async () => {
-    return db.collection("admin-playlists").get().then(snapshot => {
-        const tempArray = [];
-        snapshot.forEach(doc =>{
-            tempArray.push({...doc.data(), id: doc.id});
-        })
-        adminPlaylists.set(tempArray);
-    })
+    // return db.collection("admin-playlists").get().then(snapshot => {
+    //     const tempArray = [];
+    //     snapshot.forEach(doc =>{
+    //         tempArray.push({...doc.data(), id: doc.id});
+    //     })
+    //     adminPlaylists.set(tempArray);
+    // })
+
+    return fetch("http://192.168.1.183:3000/admin_playlists").then(res => {
+        return res.json()
+    }).then(res => { adminPlaylists.set(res)})
     
 }  
 

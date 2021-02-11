@@ -1,5 +1,4 @@
 <script>
-    import { fly } from 'svelte/transition';
     import { signoutUser } from './scripts/auth.js';
     import { userDetails } from './scripts/stores.js';
 
@@ -16,9 +15,9 @@
 
 </script>
 
-<div  in:fly={{x:500,duration:1000}}>
+<div class='profile-cont'>
     {#if $userDetails === undefined }
-        <div ><div></div><div></div><div></div><div></div></div>
+        <div class='spinner'></div>
     {:else}
         <div >
             <div ></div>

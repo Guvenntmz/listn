@@ -11,7 +11,7 @@
     
 </script>
 
-<div >
+<div class='library-cont'>
     <div >
         <div >
             <div  in:fly={{y:500,duration:1000}}>
@@ -29,7 +29,6 @@
             </div>
         </div>      
     </div>
-    <div ><h3>Copyright Expuny 2020</h3></div>
 </div>
 
 

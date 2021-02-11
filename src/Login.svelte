@@ -1,4 +1,4 @@
-<script lang='ts'>
+<script>
     import { fly } from "svelte/transition";
     import { signupUser, signinUser } from "./scripts/auth.js";
 
@@ -38,11 +38,10 @@
         <div class="row justify-content-center position-relative">
             <h1 class="col-sm-6 lead text-muted my-5 text-center">Share music, explore moods, set moods with your playlists.</h1>
             {#await signinPromise || signupPromise}
-                <p class='conatiner text-center position-absolute top-50 fs-10 text-primary'>please wait...</p>
+                <div class="spinner position-absolute top-0"></div>
             {/await}
         </div>
         <div class="container my-4">
-            
             <h1 class="display-4 text-center expuny">EXPUNY</h1>
         </div>
         {#if !pressedSignupButton && !pressedLoginButton}
@@ -56,8 +55,8 @@
 
     {#if !pressedLoginButton && !pressedSignupButton}
         <div class="row align-items-center same-height adjust-height" in:fly={{x:-500, duration:1000}}>
-            <button class="btn btn-dark col-4 offset-1" on:click={handleLoginClick}>LOGIN</button>
-            <button class="btn btn-dark col-4 offset-2 " on:click={handleSignupClick}>SIGN UP</button>
+            <button class="btn btn-dark col-4 offset-1 col-lg-3 offset-lg-1" on:click={handleLoginClick}>LOGIN</button>
+            <button class="btn btn-dark col-4 offset-2 col-lg-3 offset-lg-4" on:click={handleSignupClick}>SIGN UP</button>
         </div>
 
 
@@ -65,25 +64,25 @@
 
     {:else if pressedLoginButton}
         
-        <form class="container same-height adjust-height" on:submit={handleLoginSubmit} in:fly={{x:500,duration:1000}}>
-            <div class="form-group">
-                <button class="btn btn-dark btn-block btn-sm col-12 col-sm-3 mb-3 mx-auto" type="button" on:click={handleGoBack}>Go Back</button>
-                <input class="form-control col-12 col-sm-6 mb-2 offset-sm-3" type="email" placeholder="e-mail" required>
-                <input class="form-control col-12 col-sm-6 mb-3 offset-sm-3" type="password" placeholder="password" required>
-                <button class="btn btn-info btn-block btn-sm col-12 col-sm-3 mx-auto" type="submit">Login</button>
+        <form class="row same-height adjust-height" on:submit={handleLoginSubmit} in:fly={{x:500,duration:1000}}>
+            <div class="col-12 col-lg-6 offset-lg-3">
+                <button class="btn btn-dark btn-block btn-sm mb-2" type="button" on:click={handleGoBack}>Go Back</button>
+                <input class="form-control mb-2" type="email" placeholder="e-mail" required>
+                <input class="form-control mb-2" type="password" placeholder="password" required>
+                <button class="btn btn-info btn-block btn-sm" type="submit">Login</button>
                 <p class='error-message-login'></p>
             </div>
         </form>
 
     {:else if pressedSignupButton}
-        <form class="same-height adjust-height" on:submit={handleSignupSubmit} in:fly={{x:500,duration:1000}}>
-            <div class="form-group">
-                <button class="btn btn-dark btn-block btn-sm col-12 col-sm-3 mb-2 mx-auto" type="button" on:click={handleGoBack}>Go Back</button>
-                <input class="form-control col-12 col-sm-6 mb-2 offset-sm-3" type="email" placeholder="e-mail" required>
-                <input class="form-control col-12 col-sm-6 mb-2 offset-sm-3" type="password" placeholder="password" required>
-                <input class="form-control col-12 col-sm-6 mb-2 offset-sm-3 name-input" type="text" placeholder="What should we call you?" required>
-                <p class="error-message-signup" ></p>
-                <button class="btn btn-info btn-block btn-sm col-12 col-sm-3 mx-auto" type="submit">Signup</button>
+        <form class="row same-height adjust-height" on:submit={handleSignupSubmit} in:fly={{x:500,duration:1000}}>
+            <div class="col-12 col-lg-6 offset-lg-3">
+                <button class="btn btn-dark btn-block btn-sm mb-2" type="button" on:click={handleGoBack}>Go Back</button>
+                <input class="form-control mb-2" type="email" placeholder="e-mail" required>
+                <input class="form-control mb-2" type="password" placeholder="password" required>
+                <input class="form-control mb-2 name-input" type="text" placeholder="What should we call you?" required>
+                <button class="btn btn-info btn-block btn-sm" type="submit">Signup</button>
+                <p class="error-message-signup mt-4 text-center"></p>
             </div>
         </form>
     {/if}
@@ -134,9 +133,6 @@
         height: 20%;
     }
     
-    .form-group {
-        margin-bottom: 0;
-    }
 
 
 </style>
