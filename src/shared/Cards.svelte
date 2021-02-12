@@ -1,22 +1,23 @@
-<script>
-    import { adminPlaylists } from '../scripts/stores';
+<script context='module'>
+    import { getAdminPlaylists } from '../scripts/stores.js';
 
-    
-    let playlists = [];
-    
-    adminPlaylists.subscribe(value => {
-        playlists = value;
-    })
-
-
+    let promise = getAdminPlaylists();
 </script>
 
-<!-- Slider main container -->
+<script>
+    import {afterUpdate, onMount} from 'svelte';
+    import { adminPlaylists } from '../scripts/stores';
+    
+    onMount(async () => {
+        await promise;
+        const swiper = new Swiper('.swiper-container',{ spaceBetween: 100 });
+    })
+</script>
+
+
 <div class="swiper-container">
-    <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
-        <!-- Slides -->
-        {#each playlists as playlist}
+        {#each $adminPlaylists as playlist}
             <div class="swiper-slide">
                 <div class="card">
                     <div class='card-header text-center'>Up For some {playlist.mood} music?</div>
@@ -30,12 +31,17 @@
                 </div>
             </div>
         {/each}
-        <!-- If we need scrollbar -->
-        <div class="swiper-scrollbar"></div>
     </div>
 </div>
 
 
 <style>
+    .card {
+        background-color: aqua;
+        color: black;
+
+    }
+        
+
 
 </style>
