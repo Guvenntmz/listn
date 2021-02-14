@@ -1,6 +1,6 @@
 <script>
 	import { Router, Route } from "svelte-routing";
-	import Login from "./Login.svelte";
+	import Auth from "./Auth.svelte";
 	import Navbar from "./shared/Navbar.svelte";
 	import Footer from "./shared/Footer.svelte";
 	import Explore from "./Explore.svelte";
@@ -22,12 +22,13 @@
 
 </script>
 
-<main>
-	{#if window.location.pathname === '/'}
-		{redirect()}
-	{:else if window.location.pathname === '/auth'}
-		<Login />
-	{:else}
+
+{#if window.location.pathname === '/'}
+	{redirect()}
+{:else if window.location.pathname === '/auth'}
+	<Auth />
+{:else}
+	<main>
 		<Router>
 			<Navbar />
 			<Route path='/explore'><Explore /></Route>
@@ -37,8 +38,9 @@
 			<Route path='/spotify'><Spotify /></Route>
 			<Footer />
 		</Router>
-	{/if}	
-</main>
+	</main>
+{/if}	
+
 	
 
 <style>

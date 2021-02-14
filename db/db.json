@@ -108,8 +108,75 @@
         }
 
 
-    ]
-    
+    ],
+
+    "user_details": {
+        "displayName": "guven",
+        "buddies": [],
+        "email": "guvenntmz@gmail.com",
+        "playlists": [
+            {
+                "createdBy": "guven",
+                "mood": "happy",
+                "playlistName": "As if Reality Shifted Slightly",
+                "songs": [
+                    "Arctic Monkeys - Do I Wanna Know",
+                    "Sorrow - Calipso",
+                    "Rammstein - Auslander",
+                    "Lindemann - Fat",
+                    "Arctic Monkeys - Do I Wanna Know",
+                    "Sorrow - Calipso",
+                    "Rammstein - Auslander",
+                    "Lindemann - Fat" 
+                ]
+            },
+            {
+                "createdBy": "admin",
+                "mood": "happy",
+                "playlistName": "As if Reality Shifted Slightly",
+                "songs": [
+                    "Arctic Monkeys - Do I Wanna Know",
+                    "Sorrow - Calipso",
+                    "Rammstein - Auslander",
+                    "Lindemann - Fat",
+                    "Arctic Monkeys - Do I Wanna Know",
+                    "Sorrow - Calipso",
+                    "Rammstein - Auslander",
+                    "Lindemann - Fat" 
+                ]
+            },
+            {
+                "createdBy": "admin",
+                "mood": "happy",
+                "playlistName": "As if Reality Shifted Slightly",
+                "songs": [
+                    "Arctic Monkeys - Do I Wanna Know",
+                    "Sorrow - Calipso",
+                    "Rammstein - Auslander",
+                    "Lindemann - Fat",
+                    "Arctic Monkeys - Do I Wanna Know",
+                    "Sorrow - Calipso",
+                    "Rammstein - Auslander",
+                    "Lindemann - Fat" 
+                ]
+            },
+            {
+                "createdBy": "admin",
+                "mood": "happy",
+                "playlistName": "As if Reality Shifted Slightly",
+                "songs": [
+                    "Arctic Monkeys - Do I Wanna Know",
+                    "Sorrow - Calipso",
+                    "Rammstein - Auslander",
+                    "Lindemann - Fat",
+                    "Arctic Monkeys - Do I Wanna Know",
+                    "Sorrow - Calipso",
+                    "Rammstein - Auslander",
+                    "Lindemann - Fat" 
+                ]
+            }
+        ]
+    }
     
     
     

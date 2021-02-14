@@ -1,3 +1,9 @@
+<script context='module'>
+    import { getUserDetails } from './scripts/stores.js';
+
+    let promise = getUserDetails();
+</script>
+
 <script>
     import Cards from './shared/Cards.svelte';
     import { fly } from 'svelte/transition';
@@ -11,24 +17,15 @@
     
 </script>
 
-<div class='library-cont'>
-    <div >
-        <div >
-            <div  in:fly={{y:500,duration:1000}}>
-                <!-- If there is no user fetched yet, it will show it loading -->
-                {#if $userDetails === undefined}  
-                    <div ><div></div><div></div><div></div><div></div></div>
-                {:else if $userDetails.playlists.length === 0}
-                    <h1>You have no playlists.</h1>
-                {:else}
-                    <h2>Your playlists.</h2>
-                    <!-- card component is customized for each Library and Explore component -->
-                    <Cards />
-                {/if}
-                <!-- end of loading logic -->
-            </div>
-        </div>      
-    </div>
+<div class='library-cont d-md-flex align-items-center' in:fly={{x:-500,duration:500}}>
+
+    {#if $userDetails === 0}
+        <h1>You have no playlists.</h1>
+    {:else}
+        <h2 class='px-5 h-100'><span class='text-dark'>Your<br/></span>playlists.</h2>
+        <Cards promise={promise} component={'library'}/>
+    {/if}
+            
 </div>
 
 

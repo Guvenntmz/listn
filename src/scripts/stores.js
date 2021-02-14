@@ -16,7 +16,7 @@ export const getAdminPlaylists = async () => {
     //     adminPlaylists.set(tempArray);
     // })
 
-    return fetch("http://192.168.1.183:3000/admin_playlists").then(res => {
+    return fetch("http://192.168.1.162:3000/admin_playlists").then(res => {
         return res.json()
     }).then(res => { adminPlaylists.set(res)})
     
@@ -56,16 +56,19 @@ export const deletePlaylist = async (docId) => {
 
 
 export const getUserDetails = async () => {
-    const uid = window.localStorage.getItem('uid');
-    return db.collection('users').doc(uid).onSnapshot(doc => {
-        let data = doc.data();
-        userDetails.set({
-            displayName: data.displayName,
-            email: data.email,
-            buddies: data.buddies,
-            playlists: data.playlists
-        })
-    })
+    // const uid = window.localStorage.getItem('uid');
+    // return db.collection('users').doc(uid).onSnapshot(doc => {
+    //     let data = doc.data();
+    //     userDetails.set({
+    //         displayName: data.displayName,
+    //         email: data.email,
+    //         buddies: data.buddies,
+    //         playlists: data.playlists
+    //     })
+    // })
+    return fetch("http://192.168.1.162:3000/user_details").then((res) => {
+        return res.json()
+    }).then((res)=> { userDetails.set(res) })
 }
 
 

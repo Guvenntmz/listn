@@ -14,15 +14,15 @@
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-svelte": "^5.2.3",
     "rollup-plugin-terser": "^5.3.1",
+    "rollup-plugin-css-only": "^3.1.0",
     "svelte": "^3.29.7"
   },
   "dependencies": {
     "axios": "^0.21.1",
     "cuid": "^2.1.8",
     "rollup": "^2.33.3",
-    "rollup-plugin-css-only": "^3.1.0",
     "sirv-cli": "^0.4.6",
-    "smoothscroll-polyfill": "^0.4.4",
+    "skeleton-elements": "^3.3.0",
     "svelte-routing": "^1.4.2",
     "swiper": "^6.4.11"
   }

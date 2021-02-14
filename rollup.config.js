@@ -17,7 +17,7 @@ export default {
 		file: 'public/build/bundle.js'
 	},
 	plugins: [
-		css({ output: 'public/vendor.css' }),
+		css({ output: 'vendor.css' }),
 		svelte({
 			// enable run-time checks when not in production
 			dev: !production,
@@ -55,7 +55,7 @@ export default {
 		production && terser()
 	],
 	watch: {
-		clearScreen: true
+		clearScreen: false
 	}
 };
 

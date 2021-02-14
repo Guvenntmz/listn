@@ -2,7 +2,7 @@
 
 //function to be called in signupUser function
 const addUserToDatabase = async () => {
-    const nameInputValue = document.querySelector('.name-input').value;
+    const nameInputValue = document.querySelector('#name').value;
     //adding user to database as an document and passing display name to update user's display name
     const HTTPaddUserToDatabase = functions.httpsCallable('addUserToDatabase');
     return HTTPaddUserToDatabase({ displayName: nameInputValue})
