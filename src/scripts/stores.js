@@ -16,7 +16,7 @@ export const getAdminPlaylists = async () => {
     //     adminPlaylists.set(tempArray);
     // })
 
-    return fetch("http://192.168.1.162:3000/admin_playlists").then(res => {
+    return fetch("http://192.168.1.177:3000/admin_playlists").then(res => {
         return res.json()
     }).then(res => { adminPlaylists.set(res)})
     
@@ -66,19 +66,22 @@ export const getUserDetails = async () => {
     //         playlists: data.playlists
     //     })
     // })
-    return fetch("http://192.168.1.162:3000/user_details").then((res) => {
+    return fetch("http://192.168.1.177:3000/user_details").then((res) => {
         return res.json()
     }).then((res)=> { userDetails.set(res) })
 }
 
 
 export const getBuddiesFromDb = async () => {
-    db.collection('users').doc(localStorage.uid).onSnapshot(async doc => {
-        const buddies = doc.data().buddies;
-        const getBuddies = functions.httpsCallable('getBuddies');
-        let response = await getBuddies({buddies: buddies});
-        buddiesArr.set(response.data);
-    })
+    // return db.collection('users').doc(localStorage.uid).onSnapshot(async doc => {
+    //     const buddies = doc.data().buddies;
+    //     const getBuddies = functions.httpsCallable('getBuddies');
+    //     let response = await getBuddies({buddies: buddies});
+    //     buddiesArr.set(response.data);
+    // })
+    return fetch("http://192.168.1.177:3000/user_details").then(res => {
+        return res.json()
+    }).then(res => buddiesArr.set(res.buddies))
 }
 
 

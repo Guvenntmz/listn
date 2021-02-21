@@ -112,7 +112,69 @@
 
     "user_details": {
         "displayName": "guven",
-        "buddies": [],
+        "buddies": [
+            {
+                "displayName": "buddy1",
+                "buddies": [],
+                "email": "guvenntmz@gmail.com",
+                "playlists": []
+            },
+            {
+                "displayName": "buddy2",
+                "buddies": [],
+                "email": "guvenntmz@gmail.com",
+                "playlists": []
+            },
+            {
+                "displayName": "buddy3",
+                "buddies": [],
+                "email": "guvenntmz@gmail.com",
+                "playlists": []
+            },
+            {
+                "displayName": "buddy4",
+                "buddies": [],
+                "email": "guvenntmz@gmail.com",
+                "playlists": []
+            },
+            {
+                "displayName": "buddy5",
+                "buddies": [],
+                "email": "guvenntmz@gmail.com",
+                "playlists": []
+            },
+            {
+                "displayName": "buddy7",
+                "buddies": [],
+                "email": "guvenntmz@gmail.com",
+                "playlists": []
+            },
+            {
+                "displayName": "buddy8",
+                "buddies": [],
+                "email": "guvenntmz@gmail.com",
+                "playlists": []
+            },
+            {
+                "displayName": "buddy9",
+                "buddies": [],
+                "email": "guvenntmz@gmail.com",
+                "playlists": []
+            },
+            {
+                "displayName": "buddy10",
+                "buddies": [],
+                "email": "guvenntmz@gmail.com",
+                "playlists": []
+            },
+            {
+                "displayName": "buddy11",
+                "buddies": [],
+                "email": "guvenntmz@gmail.com",
+                "playlists": []
+            }
+            
+        ],
         "email": "guvenntmz@gmail.com",
         "playlists": [
             {

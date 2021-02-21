@@ -71,6 +71,13 @@ a {
     flex-shrink: 0;
 }
 
+.skeleton-avatar {
+    opacity: 0.4;
+    width: 160px;
+    height: 160px;
+    flex-shrink: 0;
+}
+
 @media (max-width: 576px) {
 
     .skeleton-block {
@@ -80,11 +87,15 @@ a {
 }
 
 @media (max-width: 768px) {
-    .skeleton-block:nth-child(3), .skeleton-block:nth-child(5){
+    .skeleton-block:nth-child(2n+3){
         display: none;
     }
     .skeleton-cont {
         justify-content: center;
+    }
+
+    .skeleton-avatar:nth-child(2n+3){
+        display: none;
     }
 
 }
