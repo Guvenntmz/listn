@@ -12,9 +12,16 @@
 
     onMount(async () => {
         await promise;
-        const swiper = initSwiper();
+        let flkty = new Flickity( '.main-carousel', {
+            // options
+            cellAlign: 'left',
+            contain: true,
+            prevNextButtons: false,
+            pageDots: false
+        });
         giveCardsRandomColor();
     })
+
 </script>
 
 {#await promise}
@@ -27,34 +34,33 @@
     </div>
     
 {:then}
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            {#each component === 'explore' ? $adminPlaylists : $userDetails.playlists as playlist}
-                <div class="swiper-slide">
-                    <div class="card card-bg">
-                        <div class='card-header text-center'>Up For some {playlist.mood} music?</div>
-                        <div class="card-body">
-                            <h1 class='card-title text-center text-truncate'>{playlist.playlistName}</h1>
-                            {#each playlist.songs as song}
-                                <p class='card-text text-truncate'>{song}</p>
-                            {/each}
-                        </div>
-                        <div class="card-footer text-center">by Admin</div>
+    <div class="main-carousel">
+        {#each component === 'explore' ? $adminPlaylists : $userDetails.playlists as playlist}
+            <div class="carousel-cell">
+                <div class="card card-bg">
+                    <div class='card-header text-center'>Up For some {playlist.mood} music?</div>
+                    <div class="card-body">
+                        <h1 class='card-title text-center text-truncate'>{playlist.playlistName}</h1>
+                        {#each playlist.songs as song}
+                            <p class='card-text text-truncate'>{song}</p>
+                        {/each}
                     </div>
+                    <div class="card-footer text-center">by Admin</div>
                 </div>
-            {/each}
-        </div>
-    </div>
+            </div>
+        {/each}
+      </div>
+      
 {/await}
 
 <style>
    
-    .swiper-slide {
+    .carousel-cell {
         width: 500px;
     }
 
     @media only screen and (max-width: 576px) {
-        .swiper-slide {
+        .carousel-cell {
             width: 300px;
         }
     }

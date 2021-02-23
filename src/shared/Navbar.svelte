@@ -35,7 +35,7 @@
     }
     @media only screen and (max-width: 576px) {
         nav {
-            background-image: url('/img/img-icon.svg');
+            background-image: url('/img/brand-icon.png');
             background-position: 50% 50px;
             background-size: 50%;
             background-repeat: no-repeat;

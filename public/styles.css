@@ -10,7 +10,7 @@ main {
     background: url('/img/volume.png') no-repeat center/50% #6699CC;
 }
 .login-cont {
-    background: url('/img/img-icon.svg') no-repeat 50% 18% / 40% #6699CC;
+    background: url('/img/brand-icon.png') no-repeat 50% 18% / 40% #6699CC;
 }
 
 .explore-cont, .library-cont, .buddies-cont, .profile-cont, .login-cont {
