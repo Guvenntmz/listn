@@ -5,20 +5,16 @@
     import 'skeleton-elements/skeleton-elements.css';
     import { adminPlaylists, userDetails } from '../scripts/stores';
     import { giveCardsRandomColor } from '../utils/giveCardsRandomColor.js';
+    import { initFlkty } from '../utils/initFlkty.js';
     
     export let promise;
     export let component;
 
     onMount(async () => {
         await promise;
-        let flkty = new Flickity( '.main-carousel', {
-            // options
-            cellAlign: 'left',
-            prevNextButtons: false,
-            pageDots: false,
-            contain: true
-        });
+        let flkty = initFlkty();
         giveCardsRandomColor();
+        console.log(window.innerWidth)
     })
 
 </script>
@@ -58,7 +54,7 @@
    }
     .carousel-cell {
         width: 500px;
-        margin-right: 30px;
+        margin-right: 50px;
     }
 
     @media only screen and (max-width: 576px) {
@@ -68,7 +64,6 @@
 
 
     }
-
     .card {
         color: black;
         border-color: white;

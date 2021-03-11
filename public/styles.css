@@ -1,71 +1,66 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
-html, body, main {
-    min-height: 100%;
-    font-family: 'IBM Plex Sans', sans-serif;
-    color: white;
+/* ----------------------------------------------------------
+    Reboot and Variables
+---------------------------------------------------------- */
+:root {
+    --bg-light: #ced6e0;
+    --bg-dark: #415a6b;
+    --dark: #632B24;
+    --light: #D6F0CD;
+    --font: Helvetica, 'sans-serif';
 }
 
-main {
-    background: url('/img/volume.png') no-repeat center/50% #6699CC;
-}
-.login-cont {
-    background: url('/img/brand-icon.png') no-repeat 50% 18% / 40% #6699CC;
-}
+ html, body {
+    min-height: 100vh;
+    font-family: "Quicksand";
+ }
 
-.explore-cont, .library-cont, .buddies-cont, .profile-cont, .login-cont {
-    min-height: 80vh;
-}
+main{
+    height: 85%;
+} */
 
-@media (min-width: 992px) {
-    form.container {
-        max-width: 720px;
-    }
-}
+h1, h2, h3 h4 {color: var(--dark);}
+p {color: var(--light);}
 
 
-a:hover {
+a:hover, a {
     text-decoration: none
     
 }
+/* ----------------------------------------------------------
+    Auth Component
+---------------------------------------------------------- */
 
-a {
-    text-decoration: none;
+
+/* ----------------------------------------------------------
+    Navbar Component
+---------------------------------------------------------- */
+nav {
+    background-color: var(--bg-dark);
+    border: none;
 }
 
-.spinner {
-    width: 80px;
-    height: 80px;
-    border: 5px solid transparent;
-    border-radius: 50% 50%;
-    border-top-color: white;
-    border-bottom-color: white;
-    animation: spin 0.5s ease infinite;
+nav a {
+    font-size: 1.4rem;
 }
 
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(180deg);
-    }
-}
 
 .navbar-light .navbar-nav .nav-link.active {
     color: rgb(31, 68, 168);
 }
 
-.navbar-brand {
-    font-family: 'IBM Plex Sans';
-    font-size: 2rem;
+.nav-brand {
+    width: 45%;
+    height: auto;
 }
 
-
-
+/* ----------------------------------------------------------
+    Skeleton Elemens
+---------------------------------------------------------- */
 .skeleton-block {
     opacity: 0.4;
-    border: 1px solid white;
+    border: 1px solid var(--secondary);
     width: 500px;
     height: 500px;
     flex-shrink: 0;
@@ -78,24 +73,43 @@ a {
     flex-shrink: 0;
 }
 
-@media (max-width: 576px) {
+/* ----------------------------------------------------------
+    Media Queries and Keyframes
+---------------------------------------------------------- */
 
-    .skeleton-block {
-        width: 300px;
-    }
 
+/* Small */
+@media screen and (max-width : 576px) {
+    /* CSS Styles */
+}
+ 
+/* Medium */
+@media screen and (max-width : 768px) {
+    
+}
+ 
+/* Large */
+@media screen and (max-width : 992px) {
+    /* CSS Styles */    
+}
+ 
+/* XL */
+@media screen and (max-device-width: 1200px) and (orientation: landscape) {
+    /* CSS Styles */
 }
 
-@media (max-width: 768px) {
-    .skeleton-block:nth-child(2n+3){
-        display: none;
-    }
-    .skeleton-cont {
-        justify-content: center;
-    }
+/* XXL */
+@media screen and (max-device-width: 1400px) and (orientation: landscape) {
+    /* CSS Styles */
+}
+ 
 
-    .skeleton-avatar:nth-child(2n+3){
-        display: none;
-    }
-
+/* iPad with portrait */
+@media screen and (max-device-width: 768px) and (orientation: portrait) {
+    /* CSS Styles */
+}
+ 
+/* Smartphones and iPhones */
+@media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    /* CSS Styles */
 }

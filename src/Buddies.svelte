@@ -10,19 +10,19 @@
     import { onMount } from 'svelte';
     import { fly } from 'svelte/transition'
     import { buddiesArr, deleteBuddy, addABuddy } from './scripts/stores.js';
-    import { initSwiper } from './utils/initSwiper.js';
     import { SkeletonAvatar } from 'skeleton-elements/svelte';
+    import { initFlkty } from './utils/initFlkty.js';
 
     let buddyEmail = '';
 
     onMount( async () => {
         await promise;
-        const swiper = initSwiper();
+        let flkty = initFlkty();
     })
 
 </script>
 
-<div class='buddies-cont d-flex flex-column justify-content-around'>
+<main class='d-flex flex-column justify-content-around'>
     <div class='d-md-flex flex-md-row align-items-md-center' in:fly={{y:200,duration:500}}>
         <h1 class='pb-2 px-5'>
             Explore<br>
@@ -46,19 +46,17 @@
                 <SkeletonAvatar showIcon={false} size=160 effect='wave' />
             </div>
         {:then}
-            <div class="swiper-container pb-1 pt-5">
-                <div class="swiper-wrapper">
-                    {#each $buddiesArr as buddy}
-                        <div class="swiper-slide">
-                            <div class='buddy'></div>
-                            <h1>{buddy.displayName}</h1>
-                        </div>
-                    {/each}
-                </div>
-            </div>
+        <div class="main-carousel">
+                {#each $buddiesArr as buddy}
+                    <div class="carousel-cell">
+                        <div class='buddy'></div>
+                        <h1>{buddy.displayName}</h1>
+                    </div>
+                {/each}
+          </div>
         {/await}
     </div>
-</div>
+</main>
 
 
 <div class="modal" id='modal'>
@@ -77,9 +75,14 @@
 
 
 <style>
-    .swiper-slide {
+    .main-carousel {
+        width: 100%;
+    }
+    .carousel-cell {
         width: 200px;
         height: 200px;
+        margin-right: 60px;
+        margin-bottom: 10px;
     }
     .buddy {
         width: 80%;
@@ -89,7 +92,7 @@
         margin: auto;
     }
 
-    .swiper-slide h1 {
+    .carousel-cell h1 {
         width: 100%;
         height: 20%;
         text-align: center;

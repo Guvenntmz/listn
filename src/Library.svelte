@@ -17,16 +17,14 @@
     
 </script>
 
-<div class='library-cont d-md-flex align-items-center' in:fly={{x:-500,duration:500}}>
-
+<main class='d-md-flex align-items-center' in:fly={{x:-500,duration:500}}>
     {#if $userDetails === 0}
         <h1>You have no playlists.</h1>
     {:else}
         <h2 class='px-5 h-100'><span class='text-dark'>Your<br/></span>playlists.</h2>
         <Cards promise={promise} component={'library'}/>
     {/if}
-            
-</div>
+</main>
 
 
 <style>
