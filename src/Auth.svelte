@@ -28,7 +28,7 @@
 <!-- <div class='container-fluid h-100'> -->
     <div class="row g-0 auth">
         <div class="col-12 col-lg-6 left-section">
-            <img class='position-absolute top-0 left-0 p-5 brand' src='/img/brand2.png' alt='brand'/>
+            <!-- <img class='position-absolute top-0 left-0 p-5 brand' src='/img/brand2.png' alt='brand'/> -->
             <h1>Music<br>is<br>better<br>shared!</h1>
         </div>
     
