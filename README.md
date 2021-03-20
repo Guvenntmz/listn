@@ -1,7 +1,7 @@
 # listn
-## Playlist management/sharing app.
+### Playlist management / sharing app.
 A social network that allows users to create and orginize playlists of their own and also look at their friends' playlists.
-The old version of the website is live with the name "Expuny" and available at "https://expuny-8267c.web.app/auth" but this version has its flaws such as;
+The old version of the website is live with the name "Expuny" and available at https://expuny-8267c.web.app/auth but this version has its flaws such as;
 - Responsive design was followed but it is clunky and ugly on mobile
 - The overall design e.g fonts, colors are not visually appealing and needs to be changed
 - The modal popups are clunky and irratating.
