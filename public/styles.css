@@ -13,13 +13,14 @@
  html, body {
     min-height: 100vh;
     font-family: "Helvetica";
+    background-color: var(--bg-dark);
  }
 
 main{
-    height: 85%;
-} */
+    min-height: 84vh;
+} 
 
-h1, h2, h3 h4 {color: var(--dark);}
+h1, h2, h3 h4 {color: black;}
 p {color: var(--light);}
 
 
@@ -27,10 +28,6 @@ a:hover, a {
     text-decoration: none
     
 }
-/* ----------------------------------------------------------
-    Auth Component
----------------------------------------------------------- */
-
 
 /* ----------------------------------------------------------
     Navbar Component
@@ -41,7 +38,7 @@ nav {
 }
 
 nav a {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
 }
 
 
@@ -50,8 +47,8 @@ nav a {
 }
 
 .nav-brand {
-    width: 45%;
-    height: auto;
+    font-size: 1.8rem;
+    padding-bottom: 0;
 }
 
 /* ----------------------------------------------------------
@@ -70,45 +67,4 @@ nav a {
     width: 160px;
     height: 160px;
     flex-shrink: 0;
-}
-
-/* ----------------------------------------------------------
-    Media Queries and Keyframes
----------------------------------------------------------- */
-
-
-/* Small */
-@media screen and (max-width : 576px) {
-    /* CSS Styles */
-}
- 
-/* Medium */
-@media screen and (max-width : 768px) {
-    
-}
- 
-/* Large */
-@media screen and (max-width : 992px) {
-    /* CSS Styles */    
-}
- 
-/* XL */
-@media screen and (max-device-width: 1200px) and (orientation: landscape) {
-    /* CSS Styles */
-}
-
-/* XXL */
-@media screen and (max-device-width: 1400px) and (orientation: landscape) {
-    /* CSS Styles */
-}
- 
-
-/* iPad with portrait */
-@media screen and (max-device-width: 768px) and (orientation: portrait) {
-    /* CSS Styles */
-}
- 
-/* Smartphones and iPhones */
-@media screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    /* CSS Styles */
 }

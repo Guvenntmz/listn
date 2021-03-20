@@ -21,7 +21,7 @@
     {#if $userDetails === 0}
         <h1>You have no playlists.</h1>
     {:else}
-        <h2 class='px-5 h-100'><span class='text-dark'>Your<br/></span>playlists.</h2>
+        <h2 class='px-5 h-100'><span class='text-white'>Your<br/></span>playlists.</h2>
         <Cards promise={promise} component={'library'}/>
     {/if}
 </main>

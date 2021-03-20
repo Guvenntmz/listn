@@ -14,7 +14,6 @@
         await promise;
         let flkty = initFlkty();
         giveCardsRandomColor();
-        console.log(window.innerWidth)
     })
 
 </script>
@@ -64,7 +63,7 @@
 
 
     }
-    .card {
+    .card p{
         color: black;
         border-color: white;
     }

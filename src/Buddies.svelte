@@ -26,9 +26,9 @@
     <div class='d-md-flex flex-md-row align-items-md-center' in:fly={{y:200,duration:500}}>
         <h1 class='pb-2 px-5'>
             Explore<br>
-            <span class='text-dark'>your</span><br>
+            <span class='text-white'>your</span><br>
             buddies'<br>
-            <span class='text-dark'>playlists.</span><br>
+            <span class='text-white'>playlists.</span><br>
             <button type='button' class='btn btn-dark my-3' data-toggle='modal' data-target='#modal'>Add A Buddy</button>
         </h1>
         {#await promise}
@@ -50,7 +50,7 @@
                 {#each $buddiesArr as buddy}
                     <div class="carousel-cell">
                         <div class='buddy'></div>
-                        <h1>{buddy.displayName}</h1>
+                        <h1 class='pt-3'>{buddy.displayName}</h1>
                     </div>
                 {/each}
           </div>
@@ -82,7 +82,7 @@
         width: 200px;
         height: 200px;
         margin-right: 60px;
-        margin-bottom: 10px;
+        margin-bottom: 30px;
     }
     .buddy {
         width: 80%;
@@ -94,7 +94,7 @@
 
     .carousel-cell h1 {
         width: 100%;
-        height: 20%;
+        height: 30%;
         text-align: center;
     }
 

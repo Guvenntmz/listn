@@ -23,15 +23,15 @@
             <div class=''>
                 <button class='btn btn-dark mb-5' on:click={clickedSignOut}>Sign Out</button>
                 <div class='circle'></div>
-                <h1 class=''>{$userDetails.displayName}</h1>
-                <p class=''>{$userDetails.email}</p>
+                <h1 class='pt-2'>{$userDetails.displayName}</h1>
+                <p class='text-white'>{$userDetails.email}</p>
             </div>
             
         </div>
         <div class='container text-center d-flex flex-column justify-content-center'>
-            <div class='fs'>
-                <div class='mb-3'>{$userDetails.playlists.length}<br><span class='text-dark'>playlists</span></div>
-                <div class=''>{$userDetails.buddies.length}<br><span class='text-dark'>buddies</span></div>
+            <div class='fs mb-4'>
+                <div class='mb-3'><span class='text-white'>{$userDetails.playlists.length}<br></span>playlists</div>
+                <div class=''><span class='text-white'>{$userDetails.buddies.length}<br></span>buddies</div>
             </div>
             
         </div>
@@ -47,6 +47,9 @@
         margin: auto;
     }
     
+    .fs {
+        font-size: 1.6rem;
+    }
 
 
 </style>
