@@ -11,6 +11,7 @@
     
 
     const handleAuthSpotifyUser = () => {
+        document.querySelector('.spinner-border').classList.remove('d-none');
         authSpotifyUser();
     }
     
@@ -21,7 +22,10 @@
         <h2 class='px-5 pb-2'>
             <span class='text-white'>Your<br/></span>
             playlists.
-            <button on:click={handleAuthSpotifyUser} class="btn btn-dark mt-2 mb-2">Add from Spotify</button>
+            <button on:click={handleAuthSpotifyUser} class="btn btn-dark mt-2 mb-2">
+                Add from Spotify
+                <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+            </button>
         </h2>
         <Cards promise={promise} component='library'/>
     </div>

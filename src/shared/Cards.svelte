@@ -1,14 +1,16 @@
 <script>
-    import { onMount, afterUpdate } from 'svelte';
+    import { onMount } from 'svelte';
     import 'swiper/swiper.min.css';
     import { SkeletonBlock } from 'skeleton-elements/svelte';
     import 'skeleton-elements/skeleton-elements.css';
-    import { adminPlaylists, buddyPlaylists, user } from '../scripts/stores';
+    import { adminPlaylists, buddyPlaylists, user, deletePlaylist } from '../scripts/stores';
     import { giveCardsRandomColor } from '../utils/giveCardsRandomColor.js';
     import { initFlkty } from '../utils/initFlkty.js';
     
     export let promise;
     export let component;
+
+    let deletePromise;
 
     let playlists = [];
 
@@ -19,6 +21,12 @@
         let flkty = initFlkty();
         giveCardsRandomColor();
     });
+
+    const handleDelete = async (e) => {
+        document.querySelector('.spinner-border').classList.remove('d-none');
+        await deletePlaylist(e.target.id);
+        window.location.reload();
+    }
 
 </script>
 
@@ -42,7 +50,16 @@
         {#each playlists as playlist}
             <div class="carousel-cell">
                 <div class="card card-bg">
-                    <div class='card-header text-center'>Up For some {playlist.mood} music?</div>
+                    <div class='card-header text-center'>
+                        Up For some {playlist.mood} music?
+                        {#if component === 'library'}
+                            <button class='btn btn-close d-inline-block float-right' id={playlist.email} on:click={handleDelete}>
+                                <br>
+                                    <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                            </button>
+                        {/if}
+                        
+                    </div>
                     <div class="card-body">
                         <h1 class='card-title text-center text-truncate'>{playlist.playlistName}</h1>
                         {#each playlist.songs as song}
@@ -50,6 +67,7 @@
                         {/each}
                     </div>
                     <div class="card-footer text-center">by Admin</div>
+                    
                 </div>
             </div>
         {/each}

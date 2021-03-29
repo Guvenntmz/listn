@@ -42,7 +42,7 @@ export const addPlaylistToUserDoc = async (songsArr, playlistName, mood) => {
 
 export const deletePlaylist = async (docId) => {
     let playlists;
-    userDetails.subscribe(user => {
+    user.subscribe(user => {
         playlists = user.playlists;
     })
     return db.collection('users').doc(auth.currentUser.uid).update({
@@ -108,7 +108,7 @@ export const addABuddy = async (email) => {
 
 export const deleteBuddy = async (email) => {
     let buddies;
-    userDetails.subscribe(user => {
+    user.subscribe(user => {
         buddies = user.buddies;
     })
     return db.collection('users').doc(localStorage.uid).update({

@@ -6,7 +6,7 @@
 </script>
 
 <script>
-    import { afterUpdate } from 'svelte';
+    import { onMount } from 'svelte';
     import { fly } from 'svelte/transition'
     import { buddiesArr, deleteBuddy, addABuddy } from './scripts/stores.js';
     import { SkeletonAvatar } from 'skeleton-elements/svelte';
@@ -15,26 +15,35 @@
 
     let buddyEmail = '';
 
-    afterUpdate( async () => {
+    onMount( async () => {
         await promise;
         let flkty = initFlkty();
     })
 
     const handleSubmitModal = async () => {
         try {
+            document.querySelector('.modal-spinner').classList.remove('d-none');
             const error = await addABuddy(buddyEmail);
             if(error.data.httpErrorCode){
+                document.querySelector('.modal-spinner').classList.add('d-none');
                 document.querySelector('.error-addBuddy').textContent = "Error: User does not exist.";
                 setTimeout(() => document.querySelector('.error-addBuddy').textContent = '', 3000);
             }else {
                 window.location.reload();
             }
         } catch(err) {
+            document.querySelector('.modal-spinner').classList.add('d-none');
             document.querySelector('.error-addBuddy').textContent = err;
             setTimeout(() => document.querySelector('.error-addBuddy').textContent = '', 3000);
         }
         
     } 
+
+    const handleDelete = async (e) => {
+        document.querySelector('.spinner-border').classList.remove('d-none');
+        await deleteBuddy(e.target.id);
+        window.location.reload();
+    }
 
 </script>
 
@@ -83,6 +92,9 @@
                                 </Link>
                             <div class='buddy'></div>
                             <h1 class='pt-3'>{buddy.slice(0, buddy.indexOf('@'))}</h1>
+                            <button class='btn btn-dark d-inline-block m-auto mb-5' id={buddy} on:click={handleDelete}>
+                                Delete <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                            </button>
                         </div>
                     {/each}
                 </div>
@@ -101,6 +113,7 @@
                 <form on:submit|preventDefault={handleSubmitModal} >
                     <input class='form-control' type="text" bind:value={buddyEmail}/>
                 </form>
+                <span class="spinner-border spinner-border-sm d-none modal-spinner" role="status" aria-hidden="true"></span>
                 <button type="button" class="btn-close m-0" data-dismiss="modal"></button>
             </div>
             <p class="error-addBuddy text-center text-danger m-0"></p>
@@ -117,15 +130,13 @@
     }
 
     .carousel-cell {
-        width: 250px;
-        height: 250px;
-        margin-right: 60px;
-        margin-bottom: 30px;
+        width: 400px;
+        height: 400px;
     }
 
     .buddy {
-        width: 70%;
-        height: 70%;
+        width: 60%;
+        height: 60%;
         border-radius: 50%;
         background-color: white;
         margin: auto;
@@ -134,7 +145,7 @@
 
     .carousel-cell h1 {
         width: 100%;
-        height: 30%;
+        height: 15%;
         text-align: center;
     }
 
