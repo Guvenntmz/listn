@@ -1,5 +1,4 @@
 export const initFlkty = () => {
-    
     if(window.innerWidth >= 576) {
         return new Flickity( '.main-carousel', {
             // options

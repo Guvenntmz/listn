@@ -3,23 +3,19 @@ import cuid from 'cuid';
 
 
 export const adminPlaylists = writable([]);
-export const userDetails = writable();
+export const user = writable({playlists: []});
 export const buddiesArr = writable([]);
+export const buddyPlaylists = writable([]);
 
 
 export const getAdminPlaylists = async () => {
-    // return db.collection("admin-playlists").get().then(snapshot => {
-    //     const tempArray = [];
-    //     snapshot.forEach(doc =>{
-    //         tempArray.push({...doc.data(), id: doc.id});
-    //     })
-    //     adminPlaylists.set(tempArray);
-    // })
-
-    return fetch("http://10.143.165.1:3000/admin_playlists").then(res => {
-        return res.json()
-    }).then(res => { adminPlaylists.set(res)})
-    
+    return db.collection("admin_playlists").get().then(snapshot => {
+        const tempArray = [];
+        snapshot.forEach(doc =>{
+            tempArray.push(doc.data());
+        })
+        adminPlaylists.set(tempArray);
+    })    
 }  
 
 
@@ -55,40 +51,47 @@ export const deletePlaylist = async (docId) => {
 }
 
 
-export const getUserDetails = async () => {
-    // const uid = window.localStorage.getItem('uid');
-    // return db.collection('users').doc(uid).onSnapshot(doc => {
-    //     let data = doc.data();
-    //     userDetails.set({
-    //         displayName: data.displayName,
-    //         email: data.email,
-    //         buddies: data.buddies,
-    //         playlists: data.playlists
-    //     })
-    // })
-    return fetch("http://10.143.165.1:3000/user_details").then((res) => {
-        return res.json()
-    }).then((res)=> { userDetails.set(res) })
+export const getUser = async () => {
+    const uid = window.localStorage.getItem('uid');
+    return db.collection('users').doc(uid).get().then(doc => {
+        let data = doc.data();
+        user.set({
+            displayName: data.displayName,
+            email: data.email,
+            buddies: data.buddies,
+            playlists: data.playlists
+        })
+    })
 }
 
 
-export const getBuddiesFromDb = async () => {
-    // return db.collection('users').doc(localStorage.uid).onSnapshot(async doc => {
-    //     const buddies = doc.data().buddies;
-    //     const getBuddies = functions.httpsCallable('getBuddies');
-    //     let response = await getBuddies({buddies: buddies});
-    //     buddiesArr.set(response.data);
-    // })
-    return fetch("http://10.143.165.1:3000/user_details").then(res => {
-        return res.json()
-    }).then(res => buddiesArr.set(res.buddies))
+export const getBuddies = async () => {
+    return db.collection('users').doc(localStorage.uid).get().then( doc => {
+        const buddies = doc.data().buddies;
+        buddiesArr.set(buddies);
+    })
 }
+
+export const getBuddyPlaylists = async (email) => {
+    return db.collection("users").where("email", "==", email)
+    .get()
+    .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            buddyPlaylists.set(doc.data().playlists);
+        });
+    })
+    .catch((error) => {
+        console.log("Error getting documents: ", error);
+    });
+}
+
+
 
 
 export const addABuddy = async (email) => {    
     //check if the typed email is already a buddy
     let userGlo;
-    userDetails.subscribe( user => {
+    user.subscribe( user => {
         userGlo = user;
     })
     if(userGlo.buddies.includes(email)){

@@ -110,135 +110,159 @@
 
     ],
 
-    "user_details": {
-        "displayName": "guven",
-        "buddies": [
-            {
-                "displayName": "buddy1",
-                "buddies": [],
-                "email": "guvenntmz@gmail.com",
-                "playlists": []
-            },
-            {
-                "displayName": "buddy2",
-                "buddies": [],
-                "email": "guvenntmz@gmail.com",
-                "playlists": []
-            },
-            {
-                "displayName": "buddy3",
-                "buddies": [],
-                "email": "guvenntmz@gmail.com",
-                "playlists": []
-            },
-            {
-                "displayName": "buddy4",
-                "buddies": [],
-                "email": "guvenntmz@gmail.com",
-                "playlists": []
-            },
-            {
-                "displayName": "buddy5",
-                "buddies": [],
-                "email": "guvenntmz@gmail.com",
-                "playlists": []
-            },
-            {
-                "displayName": "buddy7",
-                "buddies": [],
-                "email": "guvenntmz@gmail.com",
-                "playlists": []
-            },
-            {
-                "displayName": "buddy8",
-                "buddies": [],
-                "email": "guvenntmz@gmail.com",
-                "playlists": []
-            },
-            {
-                "displayName": "buddy9",
-                "buddies": [],
-                "email": "guvenntmz@gmail.com",
-                "playlists": []
-            },
-            {
-                "displayName": "buddy10",
-                "buddies": [],
-                "email": "guvenntmz@gmail.com",
-                "playlists": []
-            },
-            {
-                "displayName": "buddy11",
-                "buddies": [],
-                "email": "guvenntmz@gmail.com",
-                "playlists": []
-            }
-            
-        ],
-        "email": "guvenntmz@gmail.com",
-        "playlists": [
-            {
-                "createdBy": "guven",
-                "mood": "happy",
-                "playlistName": "As if Reality Shifted Slightly",
-                "songs": [
-                    "Arctic Monkeys - Do I Wanna Know",
-                    "Sorrow - Calipso",
-                    "Rammstein - Auslander",
-                    "Lindemann - Fat",
-                    "Arctic Monkeys - Do I Wanna Know",
-                    "Sorrow - Calipso",
-                    "Rammstein - Auslander",
-                    "Lindemann - Fat" 
-                ]
-            },
-            {
-                "createdBy": "admin",
-                "mood": "happy",
-                "playlistName": "As if Reality Shifted Slightly",
-                "songs": [
-                    "Arctic Monkeys - Do I Wanna Know",
-                    "Sorrow - Calipso",
-                    "Rammstein - Auslander",
-                    "Lindemann - Fat",
-                    "Arctic Monkeys - Do I Wanna Know",
-                    "Sorrow - Calipso",
-                    "Rammstein - Auslander",
-                    "Lindemann - Fat" 
-                ]
-            },
-            {
-                "createdBy": "admin",
-                "mood": "happy",
-                "playlistName": "As if Reality Shifted Slightly",
-                "songs": [
-                    "Arctic Monkeys - Do I Wanna Know",
-                    "Sorrow - Calipso",
-                    "Rammstein - Auslander",
-                    "Lindemann - Fat",
-                    "Arctic Monkeys - Do I Wanna Know",
-                    "Sorrow - Calipso",
-                    "Rammstein - Auslander",
-                    "Lindemann - Fat" 
-                ]
-            },
-            {
-                "createdBy": "admin",
-                "mood": "happy",
-                "playlistName": "As if Reality Shifted Slightly",
-                "songs": [
-                    "Arctic Monkeys - Do I Wanna Know",
-                    "Sorrow - Calipso",
-                    "Rammstein - Auslander",
-                    "Lindemann - Fat",
-                    "Arctic Monkeys - Do I Wanna Know",
-                    "Sorrow - Calipso",
-                    "Rammstein - Auslander",
-                    "Lindemann - Fat" 
-                ]
-            }
-        ]
-    }
+    "users": [
+        {
+            "uid": "P74SSA9xiKWGz8nRlgDOU5cMpE12",
+            "displayName": "guven",
+            "email": "guvenntmz@gmail.com",
+            "buddies" : [
+                {
+                    "displayName": "aaron",
+                    "email": "aaron@gmail.com"
+                },
+
+                {
+                    "displayName": "blanc",
+                    "email": "blanc@gmail.com"
+                }
+            ],
+            "playlists": [
+                {
+                    "createdBy": "guven",
+                    "mood": "happy",
+                    "playlistName": "As if Reality Shifted Slightly",
+                    "songs": [
+                        "Arctic Monkeys - Do I Wanna Know",
+                        "Sorrow - Calipso",
+                        "Rammstein - Auslander",
+                        "Lindemann - Fat",
+                        "Arctic Monkeys - Do I Wanna Know",
+                        "Sorrow - Calipso",
+                        "Rammstein - Auslander",
+                        "Lindemann - Fat" 
+                    ]
+                },
+                {
+                    "createdBy": "admin",
+                    "mood": "happy",
+                    "playlistName": "As if Reality Shifted Slightly",
+                    "songs": [
+                        "Arctic Monkeys - Do I Wanna Know",
+                        "Sorrow - Calipso",
+                        "Rammstein - Auslander",
+                        "Lindemann - Fat",
+                        "Arctic Monkeys - Do I Wanna Know",
+                        "Sorrow - Calipso",
+                        "Rammstein - Auslander",
+                        "Lindemann - Fat" 
+                    ]
+                },
+                {
+                    "createdBy": "admin",
+                    "mood": "happy",
+                    "playlistName": "As if Reality Shifted Slightly",
+                    "songs": [
+                        "Arctic Monkeys - Do I Wanna Know",
+                        "Sorrow - Calipso",
+                        "Rammstein - Auslander",
+                        "Lindemann - Fat",
+                        "Arctic Monkeys - Do I Wanna Know",
+                        "Sorrow - Calipso",
+                        "Rammstein - Auslander",
+                        "Lindemann - Fat" 
+                    ]
+                },
+                {
+                    "createdBy": "admin",
+                    "mood": "happy",
+                    "playlistName": "As if Reality Shifted Slightly",
+                    "songs": [
+                        "Arctic Monkeys - Do I Wanna Know",
+                        "Sorrow - Calipso",
+                        "Rammstein - Auslander",
+                        "Lindemann - Fat",
+                        "Arctic Monkeys - Do I Wanna Know",
+                        "Sorrow - Calipso",
+                        "Rammstein - Auslander",
+                        "Lindemann - Fat" 
+                    ]
+                }
+            ] 
+        },
+        {
+            "displayName": "aaron",
+            "email": "aaron@gmail.com",
+            "buddies" : [],
+            "playlists": [
+                
+            ] 
+        },
+
+        {
+            "displayName": "blanc",
+            "email": "blanc@gmail.com",
+            "buddies" : [],
+            "playlists": [
+                {
+                    "mood": "happy",
+                    "playlistName": "As if Reality Shifted Slightly",
+                    "songs": [
+                        "Arctic Monkeys - Do I Wanna Know",
+                        "Sorrow - Calipso",
+                        "Rammstein - Auslander",
+                        "Lindemann - Fat",
+                        "Arctic Monkeys - Do I Wanna Know",
+                        "Sorrow - Calipso",
+                        "Rammstein - Auslander",
+                        "Lindemann - Fat" 
+                    ]
+                },
+                {
+                    "mood": "happy",
+                    "playlistName": "As if Reality Shifted Slightly",
+                    "songs": [
+                        "Arctic Monkeys - Do I Wanna Know",
+                        "Sorrow - Calipso",
+                        "Rammstein - Auslander",
+                        "Lindemann - Fat",
+                        "Arctic Monkeys - Do I Wanna Know",
+                        "Sorrow - Calipso",
+                        "Rammstein - Auslander",
+                        "Lindemann - Fat" 
+                    ]
+                },
+                {
+                    "mood": "happy",
+                    "playlistName": "As if Reality Shifted Slightly",
+                    "songs": [
+                        "Arctic Monkeys - Do I Wanna Know",
+                        "Sorrow - Calipso",
+                        "Rammstein - Auslander",
+                        "Lindemann - Fat",
+                        "Arctic Monkeys - Do I Wanna Know",
+                        "Sorrow - Calipso",
+                        "Rammstein - Auslander",
+                        "Lindemann - Fat" 
+                    ]
+                },
+                {
+                    "mood": "happy",
+                    "playlistName": "As if Reality Shifted Slightly",
+                    "songs": [
+                        "Arctic Monkeys - Do I Wanna Know",
+                        "Sorrow - Calipso",
+                        "Rammstein - Auslander",
+                        "Lindemann - Fat",
+                        "Arctic Monkeys - Do I Wanna Know",
+                        "Sorrow - Calipso",
+                        "Rammstein - Auslander",
+                        "Lindemann - Fat" 
+                    ]
+                }
+            ] 
+        }
+        
+    ]
     
     
     

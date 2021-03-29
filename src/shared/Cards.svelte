@@ -1,20 +1,24 @@
 <script>
-    import { onMount } from 'svelte';
+    import { onMount, afterUpdate } from 'svelte';
     import 'swiper/swiper.min.css';
     import { SkeletonBlock } from 'skeleton-elements/svelte';
     import 'skeleton-elements/skeleton-elements.css';
-    import { adminPlaylists, userDetails } from '../scripts/stores';
+    import { adminPlaylists, buddyPlaylists, user } from '../scripts/stores';
     import { giveCardsRandomColor } from '../utils/giveCardsRandomColor.js';
     import { initFlkty } from '../utils/initFlkty.js';
     
     export let promise;
     export let component;
 
+    let playlists = [];
+
+    $: playlists = component === 'buddyPlaylists' ? $buddyPlaylists : component === 'library' ? $user.playlists : $adminPlaylists;
+
     onMount(async () => {
         await promise;
         let flkty = initFlkty();
         giveCardsRandomColor();
-    })
+    });
 
 </script>
 
@@ -26,10 +30,16 @@
         <div class='p-md-5'></div>
         <SkeletonBlock effect='wave' />
     </div>
-    
 {:then}
+{#if playlists.length == 0}
+<div class='main-carousel'>
+    <div class="carousel-cell">
+        <h1>No playlists to show :/</h1>
+    </div>
+</div>
+{:else}
     <div class="main-carousel">
-        {#each component === 'explore' ? $adminPlaylists : $userDetails.playlists as playlist}
+        {#each playlists as playlist}
             <div class="carousel-cell">
                 <div class="card card-bg">
                     <div class='card-header text-center'>Up For some {playlist.mood} music?</div>
@@ -43,8 +53,8 @@
                 </div>
             </div>
         {/each}
-      </div>
-      
+    </div>
+{/if}
 {/await}
 
 <style>
@@ -60,8 +70,6 @@
         .carousel-cell {
             width: 300px;
         }
-
-
     }
     .card p{
         color: black;

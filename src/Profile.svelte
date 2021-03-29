@@ -1,6 +1,6 @@
 <script>
     import { signoutUser } from './scripts/auth.js';
-    import { userDetails } from './scripts/stores.js';
+    import { user } from './scripts/stores.js';
 
     
     const clickedSignOut = () => {
@@ -16,22 +16,22 @@
 </script>
 
 <main class='container d-flex flex-column flex-lg-row justify-content-around'>
-    {#if $userDetails === undefined }
+    {#if $user === undefined }
         <div class='spinner'></div>
     {:else}
         <div class='container text-center d-flex flex-column justify-content-center'>
             <div class=''>
                 <button class='btn btn-dark mb-5' on:click={clickedSignOut}>Sign Out</button>
                 <div class='circle'></div>
-                <h1 class='pt-2'>{$userDetails.displayName}</h1>
-                <p class='text-white'>{$userDetails.email}</p>
+                <h1 class='pt-2'>{$user.displayName}</h1>
+                <p class='text-white'>{$user.email}</p>
             </div>
             
         </div>
         <div class='container text-center d-flex flex-column justify-content-center'>
             <div class='fs mb-4'>
-                <div class='mb-3'><span class='text-white'>{$userDetails.playlists.length}<br></span>playlists</div>
-                <div class=''><span class='text-white'>{$userDetails.buddies.length}<br></span>buddies</div>
+                <div class='mb-3'><span class='text-white'>{$user.playlists.length}<br></span>playlists</div>
+                <div class=''><span class='text-white'>{$user.buddies.length}<br></span>buddies</div>
             </div>
             
         </div>

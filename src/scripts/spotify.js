@@ -3,9 +3,9 @@ import axios from 'axios';
 //redirect user to oAuth page for them to authorize the app
 export const authSpotifyUser = () => {
     window.location.href = 'https://accounts.spotify.com/authorize?'
-    + 'client_id=0194377aed624aa3b004e10710d973af'
+    + 'client_id=06d4f45627ee4f85a13880623665154e'
     + '&response_type=code'
-    + '&redirect_uri=https://expuny-8267c.web.app/spotify'
+    + '&redirect_uri=http://192.168.1.10:5000/spotify/'
     + '&scope=playlist-read-private'
     + '&show_dialog=true';
 }

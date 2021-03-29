@@ -7,6 +7,7 @@
 	import Buddies from "./Buddies.svelte";
 	import Spotify from "./Spotify.svelte";
 	import Layout from "./shared/Layout.svelte";
+	import BuddiesPlaylists from './BuddiesPlaylists.svelte'
 
 
 	//redirect users depending on their sign in status
@@ -34,6 +35,9 @@
 			<Route path='/buddies'><Buddies /></Route>
 			<Route path='/profile'><Profile /></Route>
 			<Route path='/spotify'><Spotify /></Route>
+			<Route path='/buddies/:email' let:params>
+				<BuddiesPlaylists email="{params.email}" />
+			</Route>
 		</Layout>
 	</Router>
 {/if}	

@@ -56,7 +56,7 @@ exports.addBuddy = functions.region('europe-west1').https.onCall( async (data, c
         })
 
     }catch(err) {
-        throw new functions.https.HttpsError('aborted', 'user does not exist');
+        return new functions.https.HttpsError('aborted', 'user does not exist');
     }
 
 })

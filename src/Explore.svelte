@@ -7,7 +7,6 @@
 <script>
     import Cards from "./shared/Cards.svelte";
     import { fly } from 'svelte/transition'
-    
 </script>
 
 <main class='d-flex flex-column justify-content-around'>
@@ -16,5 +15,3 @@
         <Cards promise={promise} component='explore'/>
     </div>
 </main>
-
-    

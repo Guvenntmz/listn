@@ -1,31 +1,32 @@
 <script context='module'>
-    import { getUserDetails } from './scripts/stores.js';
+    import { getUser } from './scripts/stores.js';
 
-    let promise = getUserDetails();
+    let promise = getUser();
 </script>
 
 <script>
     import Cards from './shared/Cards.svelte';
     import { fly } from 'svelte/transition';
-    import { userDetails } from './scripts/stores.js';
     import { authSpotifyUser } from './scripts/spotify.js';
     
 
-    const handleAuthSpotifyUSer = () => {
+    const handleAuthSpotifyUser = () => {
         authSpotifyUser();
     }
     
 </script>
 
-<main class='d-md-flex align-items-center' in:fly={{x:-500,duration:500}}>
-    {#if $userDetails === 0}
-        <h1>You have no playlists.</h1>
-    {:else}
-        <h2 class='px-5 h-100'><span class='text-white'>Your<br/></span>playlists.</h2>
-        <Cards promise={promise} component={'library'}/>
-    {/if}
+<main class='d-flex flex-column justify-content-around' in:fly={{x:-500,duration:500}}>
+    <div class='d-md-flex flex-md-row align-items-md-center' in:fly={{x:-200, duration:500}}>
+        <h2 class='px-5 pb-2'>
+            <span class='text-white'>Your<br/></span>
+            playlists.
+            <button on:click={handleAuthSpotifyUser} class="btn btn-dark mt-2 mb-2">Add from Spotify</button>
+        </h2>
+        <Cards promise={promise} component='library'/>
+    </div>
+    
 </main>
-
 
 <style>
 

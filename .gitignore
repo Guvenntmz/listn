@@ -1,5 +1,6 @@
 /node_modules/
 /public/build/
 /functions/api_keys.js
+/public/.mockend.json
 
 .DS_Store
