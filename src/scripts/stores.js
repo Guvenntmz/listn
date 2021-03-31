@@ -45,15 +45,14 @@ export const deletePlaylist = async (docId) => {
     user.subscribe(user => {
         playlists = user.playlists;
     })
-    return db.collection('users').doc(auth.currentUser.uid).update({
+    return db.collection('users').doc(localStorage.uid).update({
         playlists: playlists.filter(playlist => playlist.id !== docId)
     })
 }
 
 
 export const getUser = async () => {
-    const uid = window.localStorage.getItem('uid');
-    return db.collection('users').doc(uid).get().then(doc => {
+    return db.collection('users').doc(localStorage.uid).get().then(doc => {
         let data = doc.data();
         user.set({
             displayName: data.displayName,

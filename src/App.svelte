@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from "svelte";
 	import { Router, Route } from "svelte-routing";
 	import Auth from "./Auth.svelte";
 	import Explore from "./Explore.svelte";
@@ -11,21 +12,19 @@
 
 
 	//redirect users depending on their sign in status
-	const redirect = () => {
-		if(localStorage.uid) {
-			window.location.pathname = '/explore'
-		}else {
-			window.location.pathname = '/auth'
+	onMount(() => {
+		if(!localStorage.uid && window.location.pathname !== '/auth') {
+			window.location.pathname = '/auth';
 		}
-		return '';
-	}	
+	})
+
+
+
 
 </script>
 
 
-{#if window.location.pathname === '/'}
-	{redirect()}
-{:else if window.location.pathname === '/auth'}
+{#if window.location.pathname === '/auth'}
 	<Auth />
 {:else}
 	<Router>

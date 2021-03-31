@@ -2,7 +2,7 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    match /admin-playlists/{playlists} {
+    match /admin_playlists/{playlists} {
       allow read: if request.auth.uid != null;
     }
     
@@ -10,5 +10,4 @@ service cloud.firestore {
     	allow read, update: if request.auth.uid == userId;
     }
   }
-}
 }

@@ -53,7 +53,7 @@
                     <div class='card-header text-center'>
                         Up For some {playlist.mood} music?
                         {#if component === 'library'}
-                            <button class='btn btn-close d-inline-block float-right' id={playlist.email} on:click={handleDelete}>
+                            <button class='btn btn-close d-inline-block float-right' id={playlist.id} on:click={handleDelete}>
                                 <br>
                                     <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
                             </button>
