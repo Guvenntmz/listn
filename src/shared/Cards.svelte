@@ -23,7 +23,7 @@
     });
 
     const handleDelete = async (e) => {
-        document.querySelector('.spinner-border').classList.remove('d-none');
+        document.querySelector('.deleting-spinner').classList.remove('d-none');
         await deletePlaylist(e.target.id);
         window.location.reload();
     }
@@ -55,7 +55,7 @@
                         {#if component === 'library'}
                             <button class='btn btn-close d-inline-block float-right' id={playlist.id} on:click={handleDelete}>
                                 <br>
-                                    <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                                    <span class="spinner-border spinner-border-sm d-none deleting-spinner mt-3 text-danger" role="status" aria-hidden="true"></span>
                             </button>
                         {/if}
                         

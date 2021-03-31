@@ -15,6 +15,8 @@
 	onMount(() => {
 		if(!localStorage.uid && window.location.pathname !== '/auth') {
 			window.location.pathname = '/auth';
+		}else if(window.location.pathname === '/') {
+			window.location.pathname = '/explore'
 		}
 	})
 
